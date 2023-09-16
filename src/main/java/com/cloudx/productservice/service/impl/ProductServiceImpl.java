@@ -40,7 +40,7 @@ public class ProductServiceImpl implements ProductService {
         }
 
         return getProductHighPriority(productList)
-                .map((Product product) -> mapProductToProductDTO(Optional.of(product)))   // Asume que mapProductToProductDTO devuelve un Optional<ProductDTO>
+                .map((Product product) -> mapProductToProductDTO(Optional.of(product)))
                 .orElseThrow(() -> new TechnicalException(
                         ERROR_PRODUCT_NOT_VALUE.getCode(),
                         String.format(ERROR_PRODUCT_NOT_VALUE.getMessage(), request.getProductId())

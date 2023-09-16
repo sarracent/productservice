@@ -29,11 +29,6 @@ class ProductControllerImplTest {
     @Mock
     private Resilience4jService resilience4JService;
 
-    @BeforeEach
-    void setUp() {
-
-    }
-
     @Test
     void testGetProductRequestAt10AMOnDay14() {
         // Create test data
@@ -68,9 +63,8 @@ class ProductControllerImplTest {
                 .startDate(LocalDateTime.of(2020, 6, 14, 0, 0, 0))
                 .endDate(LocalDateTime.of(2020, 12, 31, 0, 0, 0))
                 .price(35.5)
-                .build()); // Provide your expected response here
+                .build());
 
-        // Call the method to test
         var responseEntity = productController.getProduct(httpHeadersMap, expectedRequest.getApplicationDate()
                 , expectedRequest.getProductId(), expectedRequest.getBrandId());
 

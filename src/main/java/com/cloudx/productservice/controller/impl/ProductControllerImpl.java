@@ -44,7 +44,7 @@ public class ProductControllerImpl implements ProductController {
                 .productId(productId)
                 .brandId(brandId).build();
         var response = ProductResponse.builder()
-                .product(resilience4JService.executeProduct(() -> productService.findProductsByParameters(request)))
+                .product(resilience4JService.executeProduct(() -> productService.findProductByParameters(request)))
                 .resultCode(ZERO_MSG)
                 .resultMessage(OK_MSG)
                 .build();

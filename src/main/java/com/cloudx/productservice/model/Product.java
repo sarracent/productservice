@@ -29,7 +29,7 @@ public class Product {
 
     private Long productId;
 
-    private int priority;
+    private Integer priority;
 
     private double price;
 

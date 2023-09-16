@@ -6,7 +6,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -16,6 +15,6 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Schema(description = "Object containing PriceResponse")
 public class ProductResponse extends ServiceResponse {
-    @Schema(description = "List of Products")
-    private List<ProductDTO> product;
+    @Schema(description = "Product")
+    private ProductDTO product;
 }
